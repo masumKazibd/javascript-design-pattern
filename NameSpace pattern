@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 25px;
+            font-family: "century gothic";
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p style="color: gray;">Namespace</p>
+        <p id="namespace"></p>
+    </div>
+    <script>
+
+
+//-----------------------NameSpace pattern-----------------------
+
+function namespaceMsg(namespace){
+            document.getElementById("namespace").innerHTML += namespace ;
+        }
+        var WADA56 = WADA56 || {};
+        WADA56.Trainee = function  (id, name) {
+            this.id = id;
+            this.name = name;
+            this.getInfo = function () {
+                return this.id + ' : ' + this.name;
+            }            
+        }
+        var namespace = new WADA56.Trainee('1279', "Arafutuzzaman");
+        namespaceMsg(namespace.getInfo());
+    </script>
+</body>
+</html>
