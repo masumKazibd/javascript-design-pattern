@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 25px;
+            font-family: "century gothic";
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function Employee(id, name){
+            this.id = id;
+            this.name = name;
+        }
+        Employee.prototype.position = function(){
+            return("Software Engineer");
+        }
+        function Programmer ( id, name , salary){
+            Employee.call(this,id,name);
+            this.salary = salary;
+        }
+        Programmer.prototype=Object.create(Employee.prototype);
+        Programmer.prototype.constructor=Programmer;
+        var emp=new Programmer(1, "Masum Kazi", 45000);
+        document.write(`Id  : ${emp.id} <br>  Name  : ${emp.name} <br> Position : ${emp.position()} <br> Salary : ${emp.salary}`)
+    </script>
+</body>
+</html>
