@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>prototype pattern</title>
+    <style>
+        body{
+            padding: 25px;
+            font-family: "century gothic";
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p style="color: gray;">ProtoType</p>
+        <p id="prototype"></p>
+    </div>
+    <script>
+
+
+//-----------------------prototype pattern-----------------------
+
+function protoMsg(proto) {
+            document.getElementById("prototype").innerHTML += proto +"<br>";
+        }
+        function students(subject, name){
+            this.name = name;
+            this.sub = subject;
+        }
+        students.prototype.getInfo=function(){
+            return this.sub + "  :  " + this.name;
+        }
+        var proto = new students('C#', "Jahidul Hassan");
+        protoMsg(proto.getInfo());
+
+    </script>
+</body>
+</html>
