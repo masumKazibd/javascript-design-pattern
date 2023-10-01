@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Factory pattern</title>
+    <style>
+        body{
+            padding: 25px;
+            font-family: "century gothic";
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p style="color: gray;">Factory</p>
+        <p id="factory"></p>
+    </div>
+    <script>
+
+
+
+//-----------------------Factory pattern-----------------------
+
+function factoryMsg(factory){
+            document.getElementById("factory").innerHTML += factory;
+        }
+        function myFunction(id, name){
+            var ob={};
+            ob.id = id;
+            ob.name = name;
+            ob.getInfo=function(){
+                return this.id + " : " + this.name;
+            }
+            return ob;
+        }
+        var factory = new myFunction("123", "Masum Kazi");
+        factoryMsg(factory.getInfo())
+    </script>
+</body>
+</html>
