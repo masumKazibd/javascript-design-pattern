@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 25px;
+            font-family: "century gothic";
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p style="color: gray;">Literal Example</p>
+        <p id="literal"></p>
+    </div>  
+    <script>
+
+//-----------------------Literal pattern-----------------------
+
+        function litMsg(msg) {
+            document.getElementById("literal").innerHTML += msg;
+        }
+        var trainee = {
+
+            id: '1279032',
+            name: "Masum Kazi",
+            getInfo: function () {
+                return this.id + '  :  ' + this.name;
+            }
+        }
+        litMsg(trainee.getInfo());
+
+    </script>
+</body>
+</html>
